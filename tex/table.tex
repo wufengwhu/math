@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\usepackage{booktabs,caption,dcolumn}
+\newcolumntype{d}[1]{D{.}{.}{4}}% column type for figures with 4 decimals
+\newcommand{\subhead}[1]{\multicolumn{1}{c}{#1}}% to format sub-headings of d-type columns
+\usepackage{amsfonts}
+\usepackage{amsmath} %% Displayed equations
+\usepackage{amsxtra} %% accents
+\usepackage{mathtools}
+\begin{document}
+
+\begin{table}
+  \centering
+  \caption{Caption}  % title of Table
+  \begin{tabular}{cd{4}d{4}d{4}d{4}d{4}d{4}}
+    \toprule 
+    \textbf{File} 
+    & \multicolumn{3}{c}{\textbf{Logistic Regression}}  
+    & \multicolumn{3}{c}{\textbf{Support Vector Machine}}\tabularnewline     \cmidrule(rl){2-4} \cmidrule(rl){5-7}
+        & \subhead{Sensitivity}& \subhead{Specificity}& \subhead{Total accuracy}& \subhead{Sensitivity}& \subhead{Specificity}& \subhead{Total accuracy}\tabularnewline 
+    \midrule
+         100     &                0.0790&                0.1692&                   0.2945&                0.3670&                0.7187&                    3.1815\tabularnewline
+    \bottomrule
+ \end{tabular}
+\end{table}
+
+
+\begin{table}
+    \centering
+    \begin{tabular}{l}
+        \toprule
+        \textbf{Algorithm 1} \quad \texttt{ALS for $Matrix$ Completion} \tabularnewline
+        \midrule
+            \quad Initialize $X$, $Y$ \\
+            \quad \textbf{repeat} \\
+            \qquad \textbf{for $u=1 \ldots n$ do} \\
+            % \vskip10mm \\
+            % \hskip50mm       x_{u} = 1
+            % \end{equation}
+        \bottomrule
+   \end{tabular}
+\end{table}
+    
+% \vskip100mm
+% \hrule
+% \vskip100mm
+
+% \textbf{star}
+% \vskip10mm
+% \hrule
+% \vskip10mm
+
+% \hrule
+\noindent\rule{\textwidth}{0.4mm}\vspace{1ex}
+\noindent\textbf{Algorithm 1} \quad \texttt{ALS for $Matrix$ Completion}\\
+\noindent\rule{\textwidth}{0.2mm}
+\indent Initialize $X$, $Y$ \\ 
+\indent \textbf{repeat}\\
+\indent\indent \textbf{for $u=1 \ldots n$ do} \\
+% \vspace{0.1mm}
+\begin{equation} \label{c3}
+    x_{u} = (\sum_{r_{ui} \in r_{u*}}^{} y_{i}y_{i}^{T}
+        + \lambda I_{k})^{-1}\sum_{r_{ui} \in r_{u*}}r_{ui}y_{i}
+\end{equation}
+\indent\indent \textbf{end for}\\
+\indent\indent \textbf{for $i=1 \ldots m$ do} \\
+\begin{equation}
+    y_{i} = (\sum_{r_{ui} \in r_{u*}}x_{u}x_{u}^{T} +
+            \lambda I_{k})^{-1}\sum_{r_{ui} \in r_{*i}}r_{ui}x_{u}
+\end{equation}
+\indent\indent \textbf{end for}\\
+\indent\textbf{until} convergence\\
+\noindent\rule{\textwidth}{0.2mm}
+% \hrule
+
+\vskip100mm
+\hrule\vspace{1ex}
+\textit{I can't go to a restaurant and order food
+    because I keep looking at the fonts on the menu.}
+\hfill Knuth, Donald (2002)%
+\vspace{1ex}
+\hrule
+
+
+\vskip100mm
+
+\begin{center}
+\rule{1.0\textwidth}{.6pt}
+\vskip1mm
+\end{center}
+
+\textbf{Algorithm 1} \quad \texttt{ALS for $Matrix$ Completion}
+\begin{center}
+\rule{1.0\textwidth}{.4pt}
+\end{center}
+
+\end{document}
